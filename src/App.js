@@ -1,28 +1,41 @@
 import "./App.css";
+import Tabs from "./Tabs";
 
 function App() {
   return (
     <>
-      <div className="App">Report for Jeremy Robson Daily Weekly Monthly</div>
-      Work 5hrs -- daily -- Previous - 7hrs -- daily -- 32hrs -- weekly --
-      Previous - 36hrs -- weekly -- 103hrs -- monthly -- Previous - 128hrs --
-      monthly -- Play 1hr -- daily -- Previous - 2hrs -- daily -- 10hrs --
-      weekly -- Previous - 8hrs -- weekly -- 23hrs -- monthly -- Previous -
-      29hrs -- monthly -- Study 0hrs -- daily -- Previous - 1hr -- daily -- 4hrs
-      -- weekly -- Previous - 7hrs -- weekly -- 13hrs -- monthly -- Previous -
-      19hrs -- monthly -- Exercise 1hr -- daily -- Previous - 1hr -- daily --
-      4hrs -- weekly -- Previous - 5hrs -- weekly -- 11hrs -- monthly --
-      Previous - 18hrs -- monthly -- Social 1hr -- daily -- Previous - 3hrs --
-      daily -- 5hrs -- weekly -- Previous - 10hrs -- weekly -- 21hrs -- monthly
-      -- Previous - 23hrs -- monthly -- Self Care 0hrs -- daily -- Previous -
-      1hr -- daily -- 2hrs -- weekly -- Previous - 2hrs -- weekly -- 7hrs --
-      monthly -- Previous - 11hrs -- monthly --
-      <div class="attribution">
+      <div className="container">
+        <div className="core">
+          <article className="infoTab">
+            <span className="heading">Report for</span>
+            <h2>Jeremy Robson</h2>
+          </article>
+          <article className="filterTab">
+            <p className="filter">Daily</p>
+            <p className="filter">Weekly</p>
+            <p className="filter">Monthly</p>
+          </article>
+        </div>
+
+        <div className="tabContainer">
+          <Tabs />
+        </div>
+      </div>
+
+      <div className="attribution">
         Challenge by{" "}
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          rel="noreferrer"
+          target="_blank"
+        >
           Frontend Mentor
         </a>
-        . Coded by <a href="#">Your Name Here</a>.
+        . Coded by{" "}
+        <a href="https://github.com/8n9ght" rel="noreferrer" target="_blank">
+          8n9ght
+        </a>
+        .
       </div>
     </>
   );
