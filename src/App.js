@@ -1,24 +1,35 @@
 import "./App.css";
 import Tabs from "./Tabs";
+import profilePicture from './images/image-jeremy.png';
+import {useState} from 'react'
 
 function App() {
+
+  const [filter, setFilter] = useState('Daily')
+  
+  const handleToggle = (e) => {
+    const currentState = e.target.innerHTML
+    setFilter(currentState)
+  }
+
   return (
     <>
       <div className="container">
         <div className="core">
           <article className="infoTab">
+            <img src={profilePicture} alt="Profile avatar" className="profile"/>
             <span className="heading">Report for</span>
             <h2>Jeremy Robson</h2>
           </article>
           <article className="filterTab">
-            <p className="filter">Daily</p>
-            <p className="filter">Weekly</p>
-            <p className="filter">Monthly</p>
+            <p className="filter" onClick={handleToggle}>Daily</p>
+            <p className="filter" onClick={handleToggle}>Weekly</p>
+            <p className="filter" onClick={handleToggle}>Monthly</p>
           </article>
         </div>
 
         <div className="tabContainer">
-          <Tabs />
+          <Tabs filter={filter}/>
         </div>
       </div>
 

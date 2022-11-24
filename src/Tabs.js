@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import data from "./data.json";
+import elipse from './images/icon-ellipsis.svg'
 import exercise from './images/icon-exercise.svg'
 import play from './images/icon-play.svg'
 import selfCare from './images/icon-self-care.svg'
@@ -7,10 +8,10 @@ import social from './images/icon-social.svg'
 import study from './images/icon-study.svg'
 import work from './images/icon-work.svg'
 
-export default function Tabs() {
+export default function Tabs({filter}) {
 
-
-
+  const state = filter.toLowerCase()
+  
   const colors = [
     'hsl(15, 100%, 70%)',
     'hsl(195, 74%, 62%)',
@@ -29,28 +30,25 @@ export default function Tabs() {
     selfCare
   ]
 
-  useEffect(() => {
-    
-  }, [])
-
 
 
   return (
     <>
       {data.map((tab, index) => {
+        const tabData = tab.timeframes[state];
             return (
               <div className="tabHeader" key={index} style={{backgroundImage: `url(${bgImage[index]})`, backgroundColor: colors[index], backgroundRepeat  : 'no-repeat', backgroundPositionX: 140, backgroundPositionY: 0, backgroundSize: '30%'}}>
                 <article className="tabInfos">
                   <span className="tabIntro">
                     <p className="tabTitle">{tab.title}</p>
-                    <p className="tabCta"></p>
+                    <img src={elipse} alt={`${tab.name} options button`} className="tabCta" />
                   </span>
     
                   <article className="tabHours">
-                    {tab.timeframes.weekly.current}hrs
+                    {tabData.current}hrs
                   </article>
                   <article className="tabData">
-                    Last Week - {tab.timeframes.weekly.previous}hrs
+                    Last {filter === 'Daily' && 'Day'} {filter === 'Weekly' && 'Week'} {filter === 'Monthly' && 'Month'} - {tabData.previous}hrs
                   </article>
                 </article>
               </div>
