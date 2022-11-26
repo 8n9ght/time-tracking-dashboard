@@ -44,11 +44,9 @@ export default function Tabs({filter}) {
                     <img src={elipse} alt={`${tab.name} options button`} className="tabCta" />
                   </span>
     
-                  <article className="tabHours">
-                    {tabData.current}hrs
-                  </article>
                   <article className="tabData">
-                    Last {filter === 'Daily' && 'Day'} {filter === 'Weekly' && 'Week'} {filter === 'Monthly' && 'Month'} - {tabData.previous}hrs
+                    <p className="tabHours">{tabData.current}hrs</p>
+                    <p className="hoursTotal">Last {filter === 'Daily' && 'Day'} {filter === 'Weekly' && 'Week'} {filter === 'Monthly' && 'Month'} - {tabData.previous}hrs</p>
                   </article>
                 </article>
               </div>

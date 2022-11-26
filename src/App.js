@@ -18,8 +18,10 @@ function App() {
         <div className="core">
           <article className="infoTab">
             <img src={profilePicture} alt="Profile avatar" className="profile"/>
-            <span className="heading">Report for</span>
-            <p className="person">Jeremy Robson</p>
+            <div className="infoTabText">
+              <span className="heading">Report for</span>
+              <p className="person">Jeremy Robson</p>
+            </div>
           </article>
           <article className="filterTab">
             <p className="filter" onClick={handleToggle}>Daily</p>
