@@ -37,7 +37,7 @@ export default function Tabs({filter}) {
       {data.map((tab, index) => {
         const tabData = tab.timeframes[state];
             return (
-              <div className="tabHeader" key={index} style={{backgroundImage: `url(${bgImage[index]})`, backgroundColor: colors[index], backgroundRepeat  : 'no-repeat', backgroundPositionX: 140, backgroundPositionY: 0, backgroundSize: '30%'}}>
+              <div className="tabHeader" key={index} style={{backgroundImage: `url(${bgImage[index]})`, backgroundColor: colors[index]}}>
                 <article className="tabInfos">
                   <span className="tabIntro">
                     <p className="tabTitle">{tab.title}</p>

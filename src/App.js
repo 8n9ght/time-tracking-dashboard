@@ -19,7 +19,7 @@ function App() {
           <article className="infoTab">
             <img src={profilePicture} alt="Profile avatar" className="profile"/>
             <span className="heading">Report for</span>
-            <h2>Jeremy Robson</h2>
+            <p className="person">Jeremy Robson</p>
           </article>
           <article className="filterTab">
             <p className="filter" onClick={handleToggle}>Daily</p>
